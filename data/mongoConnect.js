@@ -9,20 +9,14 @@ const { usersModel } = require('../models/usersModel');
 
 main().catch(err => console.log(err));
 
-
-
-
 async function main() {
-  const user_Name = process.env.USERNAME;
+  const userName = process.env.USER_NAME;
   const password = process.env.PASSWORD;
-  console.log(userName);
-  console.log(password);
-  // const url = `mongodb+srv://${userName}:${password}
+
   const url =`mongodb+srv://${userName}:${password}@cluster0.ch4p88o.mongodb.net/MyCostList?retryWrites=true&w=majority`
     mongoose.set("strictQuery", false); // Fix bug error in 2023
     await mongoose.connect
     (url, {useNewUrlParser: true});
-    // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
 const db = mongoose.connection

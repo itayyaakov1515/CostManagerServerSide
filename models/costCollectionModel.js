@@ -1,8 +1,5 @@
 //Itay Yaakov 206777989
 //Kobi Nisim 313202996
-
-
-
 const crypto = require("crypto");
 const mongoose = require("mongoose");
 const costSchema = new mongoose.Schema({
